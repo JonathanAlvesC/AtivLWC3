@@ -1,0 +1,14 @@
+<template>
+
+    <lightning-card title="Dados do Contato">
+
+        <lightning-input label="Primeiro nome"                   value={primeironome}   onchange={handleInputChange}></lightning-input>
+        <lightning-input label="Sobrenome"                       value={sobrenome}      onchange={handleInputChange}></lightning-input>
+        <lightning-input label="E-mail"         type="email"     value={email}          onchange={handleInputChange}></lightning-input>
+        <lightning-input label="Website"                         value={website}        onchange={handleInputChange}></lightning-input>
+        <lightning-input label="Empresa"                         value={empresa}        onchange={handleInputChange}></lightning-input>
+        <lightning-input label="Receita anual"  type="number"    value={receitaAnual}   onchange={handleInputChange}></lightning-input>
+    
+    </lightning-card>
+  
+</template>
