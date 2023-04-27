@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-card title="Formulário">
+        
+        <lightning-input label="Nome" type ="text" value={nome} onchange={handleNomeChange}></lightning-input>
+        <lightning-input label="Peso (kg)" type="number" value={peso} onchange={handlePesoChange}></lightning-input>
+        <lightning-input label="Altura (m)" type="number" value={altura} onchange={handleAlturaChange}></lightning-input>
+        
+        <lightning-button label="Calcular IMC" onclick={calcularIMC}></lightning-button>
+        <div if:true={imc}>Seu IMC é {imc}</div>
+        
+    </lightning-card>
+</template>
