@@ -1,0 +1,28 @@
+import { LightningElement, track } from 'lwc';
+
+export default class MeuComponente extends LightningElement {
+    //@track para tornar as variáveis de classe observáveis e permitir que o LWC as atualize automaticamente conforme o usuário digita.
+    @track nome;
+    @track peso;
+    @track altura;
+    @track imc;
+
+    handleNomeChange(event) {
+        this.nome = event.target.value;
+    }
+
+    handlePesoChange(event) {
+        this.peso = event.target.value;
+    }
+
+    handleAlturaChange(event) {
+        this.altura = event.target.value;
+    }
+
+    calcularIMC() {
+        //const é uma palavra-chave usada para declarar uma variável com um valor que não pode ser alterado posteriormente. É uma forma de criar variáveis ​​de leitura única.
+        const alturaMetros = this.altura / 100; // converter altura de cm para m
+        const imc = this.peso / (alturaMetros ** 2);
+        this.imc = imc.toFixed(2); // arredondar o resultado do IMC para 2 casas decimais
+    }
+}
